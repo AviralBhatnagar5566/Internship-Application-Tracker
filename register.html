@@ -6,11 +6,12 @@
     <title>Registration page</title>
     <link rel="stylesheet" href="CSS/auth.css">
 </head>
-<body id="Registration">
-    <div class="Regcontainer">
-        <h1>Registration Page</h1>
+<body>
+    <div class="container">
+        <h3>💼Internship Tracker</h3>
+        <h1>Create Your Account</h1>
         <p>Fill in the details below to set up your new account</p>
-        <form id="RegistrationForm">
+        <form id="RegistrationLoginForm">
             <label for="username" style="font-weight: bold;">UserName</label>
             <input type="text" id="username" placeholder="Enter UserName">
             <label for="email" style="font-weight: bold;">E-mail</label>
@@ -20,10 +21,13 @@
             <label for="DOB" style="font-weight: bold;">Date Of Birth</label>
             <input type="date" id="DOB">
 
-            <input type="submit" id="submit">
+            <button type="submit" id="createaccount">Create Account</button>
             <p id="successMsg" style="color: green;"></p>
 
         </form>
+        <h3 id="or">──────────── or ────────────</h3>
+        <h3>Already have an account?  <a href="Login.html">Login</a></h3>
+        
 
 
     </div>
