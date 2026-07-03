@@ -14,12 +14,19 @@
         <form id="RegistrationLoginForm">
             <label for="username" style="font-weight: bold;">UserName</label>
             <input type="text" id="username" placeholder="Enter UserName">
+             <span class="error" id="usernameError"></span>
+
             <label for="email" style="font-weight: bold;">E-mail</label>
             <input type="text" id="email" placeholder="Enter Email">
+             <span class="error" id="emailError"></span>
+
             <label for="password" style="font-weight: bold;">password</label>
             <input type="password" id="password" placeholder="Enter Password">
+             <span class="error" id="PasswordError"></span>
+
             <label for="DOB" style="font-weight: bold;">Date Of Birth</label>
             <input type="date" id="DOB">
+             <span class="error" id="DOBerror"></span>
 
             <button type="submit" id="createaccount">Create Account</button>
             <p id="successMsg" style="color: green;"></p>
@@ -32,4 +39,5 @@
 
     </div>
 </body>
+<script src="JS/register.script.js"></script>
 </html>
