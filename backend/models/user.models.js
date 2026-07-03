@@ -50,7 +50,7 @@ userSchema.methods.generateaccesstoken =  function () {
         email:this.email
     },process.env.Access_Token_Serect,
     {
-        expiresIn:process.env.ACCESS_TOKEN_EXPIRY
+        expiresIn:process.env.Access_Token_Expiry
     }
 )
 }

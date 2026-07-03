@@ -6,7 +6,7 @@ import { User } from "../models/user.models.js";
 const generateAccessTokenRefershToken = async (userId) =>{
     try {
         const user = await User.findById(userId)
-        const accesstoken = user.generateaccesstoken()
+        const accesstoken =  user.generateaccesstoken()
         const refeshtoken = user.generaterefershtoken()
 
          user.refeshtoken = refeshtoken
