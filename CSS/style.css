@@ -370,3 +370,422 @@ body{
 
     color: #cbd5e1;
 }
+/* =========================
+   GLOBAL RESPONSIVE FIXES
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* =========================
+   TABLET RESPONSIVENESS
+========================= */
+
+@media (max-width: 900px) {
+  #navbar {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 15px;
+  }
+
+  #navbar ul {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  #navbar li {
+    padding: 10px;
+    font-size: 1rem;
+  }
+
+  #main {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 25px 18px;
+  }
+
+  #mainText {
+    padding: 10px;
+  }
+
+  #mainText h1 {
+    font-size: 2.8rem;
+  }
+
+  #dashboardPreview {
+    width: 90%;
+    max-width: 520px;
+    min-width: unset;
+  }
+
+  .steps {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .step {
+    max-width: 300px;
+  }
+
+  #ApplicationsList {
+    justify-content: center;
+  }
+
+  .ApplicationsLists {
+    min-width: unset;
+    width: 45%;
+  }
+
+  .container,
+  .Regcontainer,
+  .Logincontainer {
+    width: 90%;
+    max-width: 600px;
+  }
+}
+
+/* =========================
+   MOBILE RESPONSIVENESS
+========================= */
+
+@media (max-width: 600px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  #navbar {
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    padding: 12px;
+  }
+
+  #navbar ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+
+  #navbar li {
+    padding: 7px;
+    font-size: 0.95rem;
+  }
+
+  #main {
+    flex-direction: column;
+    padding: 18px 14px;
+    gap: 20px;
+    text-align: center;
+  }
+
+  #mainText {
+    padding: 5px;
+  }
+
+  #mainText h1 {
+    font-size: 2.1rem;
+    line-height: 1.2;
+  }
+
+  #mainText p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  #buttonone,
+  #buttonTwo {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 10px;
+  }
+
+  #dashboardPreview {
+    width: 100%;
+    min-width: unset;
+    min-height: auto;
+    padding: 15px;
+  }
+
+  .applicationrows {
+    gap: 10px;
+  }
+
+  .applicationrow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    padding: 8px;
+  }
+
+  #statsRows {
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .statBox {
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .statBox:last-child {
+    border-bottom: none;
+  }
+
+  #workflow {
+    padding: 18px 14px;
+  }
+
+  #workflow h2 {
+    text-align: center;
+    font-size: 1.15rem;
+  }
+
+  .steps {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .step {
+    width: 100%;
+    border-radius: 18px;
+    text-align: center;
+  }
+
+  /* Application Form Page */
+
+  #application {
+    padding: 15px;
+    align-items: flex-start;
+  }
+
+  .container {
+    width: 100%;
+    padding: 18px;
+    margin-top: 20px;
+  }
+
+  .container h3,
+  .container p {
+    text-align: center;
+  }
+
+  #applicationForm {
+    max-width: 100%;
+    width: 100%;
+    padding: 18px;
+    border-width: 2px;
+  }
+
+  #applicationForm input,
+  #applicationForm select,
+  #applicationForm textarea {
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+  }
+
+  #submit {
+    width: 100%;
+    margin: 12px 0 0;
+    padding: 13px;
+  }
+
+  /* Applications List Page */
+
+  #Applications {
+    padding: 14px;
+  }
+
+  #applicationhead {
+    font-size: 2.2rem;
+    line-height: 1.2;
+  }
+
+  #applicationP {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  #ApplicationsList {
+    padding: 10px 0;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .ApplicationsLists {
+    width: 100%;
+    min-width: unset;
+    padding: 14px;
+  }
+
+  .ApplicationsLists h3 {
+    font-size: 1.15rem;
+  }
+
+  .ApplicationsLists p {
+    font-size: 0.9rem;
+    word-break: break-word;
+  }
+
+  .Deletebutton,
+  .editButton {
+    padding: 8px 12px;
+    margin-top: 8px;
+  }
+
+  /* Auth Pages: Register / Login */
+
+  #Registration,
+  #Login {
+    padding: 15px;
+    align-items: flex-start;
+  }
+
+  .Regcontainer,
+  .Logincontainer {
+    width: 100%;
+    margin-top: 20px;
+    padding: 22px;
+  }
+
+  .Regcontainer h1,
+  .Logincontainer h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  .Regcontainer p,
+  .Logincontainer p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  #RegistrationForm,
+  #LoginForm {
+    max-width: 100%;
+    width: 100%;
+    padding: 20px;
+    border-width: 1px;
+  }
+
+  #RegistrationForm input,
+  #LoginForm input {
+    width: 100%;
+    padding: 12px;
+    font-size: 0.95rem;
+  }
+
+  #createaccount,
+  #loginaccount {
+    width: 100%;
+    padding: 14px;
+  }
+}
+
+/* =========================
+   SMALL PHONE FIXES
+========================= */
+
+@media (max-width: 380px) {
+  #mainText h1 {
+    font-size: 1.8rem;
+  }
+
+  #applicationhead {
+    font-size: 1.8rem;
+  }
+
+  .container,
+  .Regcontainer,
+  .Logincontainer {
+    padding: 15px;
+  }
+
+  #applicationForm,
+  #RegistrationForm,
+  #LoginForm {
+    padding: 15px;
+  }
+
+  #dashboardPreview {
+    padding: 12px;
+  }
+
+  #navbar li {
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 600px) {
+  body {
+    background: linear-gradient(135deg, #0f172a, #1e1b4b, #311042);
+  }
+
+  #main {
+    width: 100%;
+    padding: 20px 16px;
+    box-sizing: border-box;
+  }
+
+  #mainText {
+    width: 100%;
+    text-align: center;
+  }
+
+  #mainText h1 {
+    font-size: 2rem;
+    line-height: 1.15;
+  }
+
+  #dashboardPreview {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 22px;
+    box-sizing: border-box;
+  }
+
+  .applicationrows,
+  #statsRows {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  #workflow {
+    width: 100%;
+    padding: 35px 16px;
+    box-sizing: border-box;
+  }
+
+  .steps {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+  }
+
+  .step {
+    width: 100%;
+    max-width: 360px;
+    border-radius: 22px;
+    padding: 24px 18px;
+    box-sizing: border-box;
+  }
+
+  .steps::before,
+  .steps::after {
+    display: none;
+  }
+}
