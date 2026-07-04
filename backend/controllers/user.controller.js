@@ -2,6 +2,7 @@ import { asyncHandler } from "../utils/asyncHandler.js";
 import { APIresponse } from "../utils/APIresponse.js";
 import { APIerror } from "../utils/APIerror.js";
 import { User } from "../models/user.models.js";
+import { verifyJWT } from "../middleware/auth.middleware.js";
 
 const generateAccessTokenRefershToken = async (userId) =>{
     try {
@@ -74,7 +75,9 @@ const loginUser = asyncHandler(async(req,res) =>{
     const Finduser = await User.findOne({
         email
     })
-
+    if(!Finduser){
+        throw new APIerror(400,"User not found")
+    }
     const checkpassword = await Finduser.ispasswordcorrect(password)
 
     if(!checkpassword){
@@ -96,4 +99,25 @@ const loginUser = asyncHandler(async(req,res) =>{
 ))
 })
 
-export { registerUser,loginUser }
+const logout = asyncHandler(async(req,res) =>{
+    await User.findByIdAndUpdate(req.user._id,{
+        $set:{
+            refeshtoken: undefined
+        },
+       
+        },
+         {
+            new :true
+        }
+    )
+    const option = {
+        httpOnly:true,
+        secure:true
+   }
+
+   return res.status(200).clearCookie("accesstoken",option).clearCookie("refeshtoken",option).json(new APIresponse(201,"user is logout"))
+})
+ 
+
+
+export { registerUser,loginUser,logout }
