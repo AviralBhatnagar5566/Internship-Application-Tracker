@@ -1,10 +1,22 @@
 const applicationForm = document.getElementById("applicationForm")
+ 
+ const token = localStorage.getItem("accesstoken")
+ if(!token){
+        alert("You should Login first")
+        setTimeout(() =>{
+                        window.location.replace ="Login.html"
+                    },500)
+    }
+
+
 
 const response = async function response(CompanyName,roleposition,date,status,applicationlink,notes) {
     try {
         const response = await fetch("https://internship-application-tracker-dind.onrender.com/api/v1/application/applicationform",{
          method: "POST",
-         headers:{"Content-Type": "application/json"},
+         headers:
+         {  "Authorization": `Bearer ${token}`,
+            "Content-Type": "application/json"},
             body: JSON.stringify({
                 CompanyName,
                 roleposition,

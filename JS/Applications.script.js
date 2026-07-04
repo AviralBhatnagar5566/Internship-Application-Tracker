@@ -1,10 +1,23 @@
-
+ 
+ const token = localStorage.getItem("accesstoken")
+ if(!token){
+        alert("You should Login first")
+        setTimeout(() =>{
+                        window.location.replace("Login.html");
+                    },500)
+    }
 
 
 const response = async function response() {
-    const res = await fetch("https://internship-application-tracker-dind.onrender.com/api/v1/application/applications")
+    const res = await fetch("https://internship-application-tracker-dind.onrender.com/api/v1/application/applications",{ 
+        headers:{
+            "Authorization": `Bearer ${token}`,
+            "Content-Type": "application/json"}
+    })
     const data = await res.json()
     console.log(data);
+
+  
     
     const ApplicationsList = document.getElementById("ApplicationsList")
     data.data.forEach((Applications) => {
