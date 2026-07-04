@@ -1,4 +1,4 @@
-import { JsonWebTokenError } from "jsonwebtoken";
+import jwt from "jsonwebtoken";
 import { APIerror } from "../utils/APIerror.js";
 import { asyncHandler } from "../utils/asyncHandler.js";
 import { User } from "../models/user.models.js";
@@ -11,7 +11,7 @@ const verifyJWT = asyncHandler(async(req,_,next) =>{
         throw new APIerror(400,"Unauthorized")
     }
 
-    const verifyToken = JsonWebTokenError.verify(token,process.env.Access_Token_Serect)
+    const verifyToken = jwt.verify(token,process.env.Access_Token_Serect)
 
     const user = await User.findById(verifyToken._id).select("-password -refeshtoken" )
 
