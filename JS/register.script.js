@@ -75,7 +75,9 @@ resgistrationForm.addEventListener("submit",async function (event) {
             if(success){
                 document.getElementById("successMsg").innerText ="✅ Registration Done successfully!"
                 resgistrationForm.reset()
-                window.location.href = "Login.html"
+               setTimeout(() =>{
+                        window.location.href ="index.html"
+                    },1000)
             }
         else{
                 document.getElementById("successMsg").innerText ="❌ SomeThing Went Wrong"

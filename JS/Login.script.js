@@ -2,8 +2,17 @@ const Loginform = document.getElementById("RegistrationLoginForm")
 
 Loginform.addEventListener("submit",async function (event) {
      event.preventDefault()
+    
+
+
     const email = document.getElementById("email").value.trim()
     const password = document.getElementById("password").value.trim()
+
+    isvalue = true;
+    document.getElementById("emailError").innerText = "";
+     document.getElementById("PasswordError").innerText = "";
+
+
     if(!email||!email.trim()){
         document.getElementById("emailError").innerText = "Write a email"
         isvalue = false
@@ -15,8 +24,8 @@ Loginform.addEventListener("submit",async function (event) {
         document.getElementById("PasswordError").innerText = "Write password"
         isvalue = false
     }
-
-   const response = await fetch("https://internship-application-tracker-dind.onrender.com/api/v1/application/loginUser",{
+  if(isvalue){
+    const response = await fetch("https://internship-application-tracker-dind.onrender.com/api/v1/application/loginUser",{
       method:"POST",
       headers:{"Content-Type": "application/json"},
 
@@ -34,8 +43,17 @@ Loginform.addEventListener("submit",async function (event) {
    const data = await response.json()
    console.log(data);
    const accesstoken = data.data.accesstoken
-   localStorage.setItem("accessToken", accesstoken)
+   localStorage.setItem("accesstoken", accesstoken)
+   const user = data.data.user.username
+   localStorage.setItem("user",user)
+
     document.getElementById("successMsg").innerText =
       "Login successfully done";
+    setTimeout(() =>{
+      window.location.href ="index.html"
+
+    },1000)
+  }
+   
    
 })
