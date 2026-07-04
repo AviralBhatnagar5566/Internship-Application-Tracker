@@ -22,4 +22,4 @@ const verifyJWT = asyncHandler(async(req,_,next) =>{
     next()
 })
 
-export{ verifyJWT }
+export { verifyJWT }
