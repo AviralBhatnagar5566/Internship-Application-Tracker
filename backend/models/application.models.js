@@ -26,7 +26,11 @@ const applicationSchema = new mongoose.Schema({
     notes:{
         type:String,
         trim: true
-    }
+    },
+    owner:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"user"
+    },
 
 },{timestamps:true})
 
