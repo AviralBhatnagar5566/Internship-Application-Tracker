@@ -28,6 +28,7 @@ const userSchema =  new mongoose.Schema({
         required:true,
         
     },
+    
     refeshtoken:{
         type:String
     }

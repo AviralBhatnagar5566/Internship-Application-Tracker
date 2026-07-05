@@ -32,5 +32,5 @@ logOutbutton.addEventListener("click",async function (e){
     console.log(data)
 
     localStorage.removeItem("accesstoken");
-    window.location.replace("Login.html");
+    window.location.replace("index.html");
 })
