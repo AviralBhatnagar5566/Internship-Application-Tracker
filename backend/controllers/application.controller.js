@@ -26,7 +26,8 @@ const applicationform = asyncHandler(async (req,res,next) =>{
     date,
     status,
     applicationlink,
-    notes
+    notes,
+    owner: req.user._id
 })
 const createdApplication = await Application.findById(application._id)
      if(!createdApplication){

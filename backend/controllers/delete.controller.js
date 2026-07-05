@@ -8,7 +8,10 @@ import { APIresponse } from "../utils/APIresponse.js";
 const deleteApplication = asyncHandler(async(req,res,next) =>{
     const { id } = req.params
 
-    const applicationDelete = await  Application.findByIdAndDelete(id)
+    const applicationDelete = await  Application.findOneAndDelete({
+        _id: id,
+        owner: req.user._id
+    })
 
     if(!deleteApplication){
         throw new APIerror(404,"Data not found")

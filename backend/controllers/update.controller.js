@@ -8,7 +8,9 @@ const updateApplication = asyncHandler(async(req,res,next) =>{
     const { id } = req.params
     const { CompanyName,roleposition,date,status,applicationlink,notes } = req.body
 
-    const application = await Application.findByIdAndUpdate(id,
+    const application = await Application.findOneAndUpdate({ 
+        _id: id,
+        owner: req.user._id},
         { CompanyName,roleposition,date,status,applicationlink,notes },
         { new: true, runValidators: true }
     )
