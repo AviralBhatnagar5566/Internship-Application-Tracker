@@ -17,10 +17,10 @@ router.route("/logout").post(verifyJWT ,logout)
 router.route("/applicationform").post(verifyJWT ,applicationform)
 
 router.route("/applications").get(verifyJWT ,applications)
-router.route("/applicationsByuid/:id").get(applicationsByuid)
-router.route("/deleteApplication/:id").delete(deleteApplication)
+router.route("/applicationsByuid/:id").get(verifyJWT, applicationsByuid)
+router.route("/deleteApplication/:id").delete(verifyJWT,deleteApplication)
 
-router.route("/updateApplication/:id").patch(updateApplication)
+router.route("/updateApplication/:id").patch(verifyJWT, updateApplication)
 
 
 export { router }
