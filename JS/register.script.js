@@ -17,6 +17,7 @@ const response = async function response(username,email,password,DOB) {
     }
     const data = await res.json()
     console.log(data)
+    return true
 
     } catch (error) {
         console.log("ERROR: ",error);
@@ -55,6 +56,7 @@ resgistrationForm.addEventListener("submit",async function (event) {
     }
     if(!email.includes("@")){
             document.getElementById("emailError").innerText = "Write a valid email"
+            isvalue = false
         }
      if(!password||!password.trim()){
         document.getElementById("PasswordError").innerText = "Write password"
