@@ -13,14 +13,22 @@ const response = async function response() {
         headers:{
             "Authorization": `Bearer ${token}`,
             "Content-Type": "application/json"}
+            
+
     })
     const data = await res.json()
     console.log(data);
+    const allApplication = data.data
+    renderapplication(allApplication)
 
-  
+}
+   
     
+
+  function renderapplication(application){
     const ApplicationsList = document.getElementById("ApplicationsList")
-    data.data.forEach((Applications) => {
+     ApplicationsList.innerHTML = "";
+    application.forEach((Applications) => {
         const div = document.createElement("div");
         div.classList.add("ApplicationsLists")
         div.innerHTML = `
@@ -56,7 +64,7 @@ const response = async function response() {
 
        
     })
-}
-
-
+  }
+    
+ 
 response()
