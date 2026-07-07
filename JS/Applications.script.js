@@ -6,7 +6,7 @@
                         window.location.replace("Login.html");
                     },500)
     }
-
+let allApplication =[]
 
 const response = async function response() {
     const res = await fetch("https://internship-application-tracker-dind.onrender.com/api/v1/application/applications",{ 
@@ -18,11 +18,26 @@ const response = async function response() {
     })
     const data = await res.json()
     console.log(data);
-    const allApplication = data.data
+    allApplication = data.data
+
+          
+
     renderapplication(allApplication)
 
 }
-   
+
+const searchInput = document.getElementById("searchbar");
+
+        searchInput.addEventListener("input", function () {
+        const searchValue = searchInput.value.toLowerCase();
+
+        const filteredArray = allApplication.filter((app) =>
+        app.CompanyName.toLowerCase().includes(searchValue),
+       
+
+    );
+     renderapplication(filteredArray)
+});
     
 
   function renderapplication(application){
@@ -58,6 +73,7 @@ const response = async function response() {
             window.location.href = `updateApplication.html?id=${Applications._id}`
         })
 
+  
          div.appendChild(button);
         div.appendChild(editButton)
         ApplicationsList.appendChild(div)
