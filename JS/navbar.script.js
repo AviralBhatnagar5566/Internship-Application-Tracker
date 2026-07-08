@@ -18,19 +18,23 @@ const token = localStorage.getItem("accesstoken")
 
 logOutbutton.addEventListener("click",async function (e){
     e.preventDefault()
-    const response = await fetch("https://internship-application-tracker-dind.onrender.com/api/v1/application/logout",{
+    try{const response = await fetch("https://internship-application-tracker-dind.onrender.com/api/v1/application/logout",{
         method:"POST",
         headers:{
             "Authorization": `Bearer ${token}`,
             "Content-Type": "application/json"
         }
     })
-    if(!response.ok){
-        return false
-    }
+   
+    
     const data = await response.json()
     console.log(data)
-
+    }
+    catch(error){
+        console.log("Error: ",error);
+        
+    }
     localStorage.removeItem("accesstoken");
     window.location.replace("index.html");
+
 })
